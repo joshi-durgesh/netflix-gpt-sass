@@ -1,6 +1,39 @@
+@import "./presets.scss";
+
 // css reset
+html {
+  font-size: 10px;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.logo {
+  width: 18rem;
+  filter: saturate(3);
+}
+
+.btn-md {
+  font: {
+    size: 1.4rem;
+    weight: bold;
+  }
+
+  text-transform: none;
+  background: $primary-color;
+  &:hover {
+    background-color: $primary-color-shade;
+  }
+}
+
+.hero-section {
+  background: {
+    image: url($hero_img);
+    position: bottom -15rem right -20rem;
+  }
+  height: 98vh;
+  border-bottom: $border-lg;
 }

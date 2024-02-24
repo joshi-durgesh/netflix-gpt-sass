@@ -1,25 +1,29 @@
 import Header from "./Header";
 import Button from "@mui/material/Button";
-import { BG_POSTER } from "../utils/constant";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import { Box, Container, Stack, Typography } from "@mui/material";
 
 const HeroSection = () => {
   return (
-    <section className=''>
-      <div className=' '>
+    <Box className='hero-section'>
+      <Stack>
         <Header />
-        <div>
-          <div>Laughter. Tears. Thrills. Find it all on Netflix.</div>
-          <div>Endless entertainment starts at just ₹149. Cancel anytime.</div>
-          <div>
+        <Container maxWidth='lg'>
+          <Typography>
+            Laughter. Tears. Thrills. Find it all on Netflix.
+          </Typography>
+          <Typography>
+            Endless entertainment starts at just ₹149. Cancel anytime.
+          </Typography>
+          <Typography>
             Ready to watch? Enter your email to create or restart your
             membership.
-          </div>
+          </Typography>
 
           <Button endIcon={<ArrowForwardIosIcon />}>Get Started</Button>
-        </div>
-      </div>
-    </section>
+        </Container>
+      </Stack>
+    </Box>
   );
 };
 
