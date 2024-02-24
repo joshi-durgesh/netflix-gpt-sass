@@ -2,12 +2,14 @@
 $primary-color: #ff1621;
 $primary-color-shade: #c11119;
 $border-color: #333;
+$border-color-light: #555;
 
 //images
 $hero-img: "https://assets.nflxext.com/ffe/siteui/vlv3/2e07bc25-8b8f-4531-8e1f-7e5e33938793/e4b3c14a-684b-4fc4-b14f-2b486a4e9f4e/IN-en-20240219-popsignuptwoweeks-perspective_alpha_website_large.jpg";
 
 //borders
 $border-lg: 1rem solid $border-color;
+$border-md: 2px solid $border-color-light;
 
 //gradients
 
@@ -33,7 +35,7 @@ $dark-grad: linear-gradient(
   }
 }
 
-@mixin img-center() {
+@mixin item-center() {
   position: absolute;
   top: 50%;
   left: 50%;

@@ -53,21 +53,50 @@ html {
   border-bottom: $border-lg;
 }
 
-.tv-content {
-  position: relative;
-  transform: scale(0.9);
-}
-
 .tv-img {
-  @include img-center();
+  @include item-center();
   z-index: 2;
 }
 
+.center-container {
+  @include item-center();
+}
+
 .tv-video {
-  @include img-center();
+  @include item-center();
   margin-top: -6px;
 }
 
 .container-height {
   height: 100%;
+}
+
+.mobile-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  height: 10rem;
+  width: 60%;
+  border: $border-md;
+  border-radius: 7px;
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.content-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+.content-heading {
+  font-size: 4.6rem;
+  font-weight: 900;
+  line-height: 6.5rem;
+  margin-bottom: 2rem;
 }

@@ -11,8 +11,8 @@ const Body = () => {
       <HeroSection />
       <TvSection />
       <MobileSection />
-      {/*<DevicesSection />
-      <ChildrenSection />
+      <DevicesSection />
+      {/*<ChildrenSection />
       <FAQSection /> */}
     </>
   );
