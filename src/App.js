@@ -4,9 +4,9 @@ import SignInPage from "./components/SignInPage";
 
 function App() {
   return (
-    <div>
+    <>
       <Body />
-    </div>
+    </>
   );
 }
 
