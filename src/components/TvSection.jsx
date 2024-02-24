@@ -1,31 +1,45 @@
+import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import { TV_IMG, VIDEO_TV } from "../utils/constant";
 
 const TvSection = () => {
   return (
-    <section className='bg-black  border-b-8 border-neutral-700'>
-      <div className='max-w-[1200px] h-[80vh] mx-auto flex items-center gap-3'>
-        <div className=' w-full h-full text-white flex flex-col gap-7 justify-center'>
-          <div className='text-5xl font-bold '>Enjoy on your TV</div>
-          <p className='text-2xl'>
-            Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray
-            players and more.
-          </p>
-        </div>
-        <div className='w-full h-full relative'>
-          <img
-            src={TV_IMG}
-            className='absolute  top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] z-[2]'
-          />
-          <video
-            autoPlay={true}
-            loop
-            className='absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] scale-[0.92] mt-[-9px] ml-[-3px]'
+    <Box className='section' bgcolor={"#000"}>
+      <Container maxWidth='lg' className='container-height'>
+        <Grid container height={"100%"}>
+          <Grid
+            xs='6'
+            pr={"3rem"}
+            alignItems={"center"}
+            justifyContent={"space-between"}
+            color={"#fff"}
+            sx={{ display: "flex" }}
           >
-            <source src={VIDEO_TV} type='video/mp4' />
-          </video>
-        </div>
-      </div>
-    </section>
+            <Stack direction={"column"}>
+              <Typography fontSize={"4.5rem"} fontWeight={"900"} mb={"2rem"}>
+                Enjoy on your TV
+              </Typography>
+              <Typography fontSize={"2.2rem"}>
+                Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV,
+                Blu-ray players and more.
+              </Typography>
+            </Stack>
+          </Grid>
+          <Grid
+            xs='6'
+            alignItems={"center"}
+            justifyContent={"center"}
+            sx={{ display: "flex" }}
+          >
+            <Box className='tv-content'>
+              <img src={TV_IMG} className='tv-img' />
+              <video autoPlay={true} loop className='tv-video'>
+                <source src={VIDEO_TV} type='video/mp4' />
+              </video>
+            </Box>
+          </Grid>
+        </Grid>
+      </Container>
+    </Box>
   );
 };
 

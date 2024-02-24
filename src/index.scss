@@ -12,21 +12,17 @@ html {
 }
 
 .logo {
-  width: 18rem;
-  filter: saturate(3);
+  width: 19rem;
+  filter: saturate(2);
 }
 
 .btn-md {
-  font: {
-    size: 1.4rem;
-    weight: bold;
-  }
+  @include btn();
+}
 
-  text-transform: none;
-  background: $primary-color;
-  &:hover {
-    background-color: $primary-color-shade;
-  }
+.btn-lg {
+  @include btn($size: 2rem);
+  padding: 0.5rem 3rem;
 }
 
 .hero-section {
@@ -36,4 +32,42 @@ html {
   }
   height: 98vh;
   border-bottom: $border-lg;
+}
+
+.hero-container {
+  background: {
+    image: $dark-grad;
+  }
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.hero-content {
+  color: #fff;
+  margin-top: 25rem;
+}
+
+.section {
+  height: 80vh;
+  border-bottom: $border-lg;
+}
+
+.tv-content {
+  position: relative;
+  transform: scale(0.9);
+}
+
+.tv-img {
+  @include img-center();
+  z-index: 2;
+}
+
+.tv-video {
+  @include img-center();
+  margin-top: -6px;
+}
+
+.container-height {
+  height: 100%;
 }

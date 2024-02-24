@@ -9,9 +9,9 @@ const Body = () => {
   return (
     <>
       <HeroSection />
-      {/* <TvSection />
+      <TvSection />
       <MobileSection />
-      <DevicesSection />
+      {/*<DevicesSection />
       <ChildrenSection />
       <FAQSection /> */}
     </>
