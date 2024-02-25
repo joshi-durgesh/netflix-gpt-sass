@@ -21,6 +21,7 @@ const FAQSection = () => {
           textAlign={"center"}
           fontWeight={"900"}
           mb={"3rem"}
+          sm
         >
           Frequently Asked Questions
         </Typography>

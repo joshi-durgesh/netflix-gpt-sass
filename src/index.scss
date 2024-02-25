@@ -44,7 +44,7 @@ html {
 }
 
 .hero-content {
-  color: #fff;
+  color: $text-light;
   margin-top: 25rem;
 }
 
@@ -69,7 +69,9 @@ html {
 
 .tv-video {
   @include item-center();
-  margin-top: -6px;
+  margin-top: -7px;
+  margin-left: -2px;
+  transform: translate(-50%, -50%) scale(0.73);
 }
 
 .device-img {
@@ -80,7 +82,7 @@ html {
 .device-video {
   @include item-center();
 
-  transform: scale(0.82) translate(-62%, -100%);
+  transform: translate(-51%, -76%) scale(0.59);
 }
 
 .container-height {
@@ -91,7 +93,7 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #000;
+  background-color: $bg-black;
   height: 10rem;
   width: 60%;
   border: $border-md;
@@ -120,7 +122,7 @@ html {
 
 .que {
   font-size: 2.4rem;
-  color: #fff;
+  color: $text-light;
 }
 
 .css-o4b71y-MuiAccordionSummary-content.Mui-expanded {
@@ -132,25 +134,33 @@ html {
 }
 
 .que-div {
-  background: #323232;
+  background: $bg-dark;
   padding: 1rem 2rem;
   &:hover {
-    background-color: #3a3a3a;
+    background-color: $bg-light;
   }
 }
 
 .accordion-div {
-  background-color: #000;
+  background-color: $bg-black;
   margin-bottom: 1rem;
 }
 
 .ans-div {
-  background-color: #323232;
+  background-color: $bg-light;
   margin-top: 1px;
   padding: 2rem 2rem;
 }
 
 .ans {
-  color: #fff;
+  color: $text-light;
   font-size: 2.4rem;
+}
+
+.links {
+  color: $text-gray;
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: underline;
 }

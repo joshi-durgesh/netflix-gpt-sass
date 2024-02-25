@@ -18,9 +18,9 @@ const DevicesSection = () => {
             </Box>
           </Grid>
           <Grid xs='6' className='content-container'>
-            <Box position={"relative"} width={"100%"} height={"100%"}>
-              <img src={DEVICE_IMG} className='device-img' />
-              <video autoPlay loop className='device-video'>
+            <Box position={"relative"} width={"100%"}>
+              <img src={DEVICE_IMG} className='tv-img' width={"100%"} />
+              <video autoPlay loop muted width='100%' className='device-video'>
                 <source src={VIDEO_DEVICES} type='video/mp4' />
               </video>
             </Box>

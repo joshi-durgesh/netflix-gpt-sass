@@ -6,7 +6,7 @@ const TvSection = () => {
     <Box className='section'>
       <Container maxWidth='lg' className='container-height'>
         <Grid container height={"100%"}>
-          <Grid xs='6' className='content-container'>
+          <Grid md='6' className='content-container'>
             <Stack direction={"column"} color={"#fff"}>
               <Typography className='content-heading'>
                 Enjoy on your TV
@@ -17,10 +17,10 @@ const TvSection = () => {
               </Typography>
             </Stack>
           </Grid>
-          <Grid xs='6' className='content-container'>
+          <Grid md='6' className='content-container'>
             <Box position={"relative"} width={"100%"}>
-              <img src={TV_IMG} className='tv-img' />
-              <video autoPlay={true} loop className='tv-video'>
+              <img src={TV_IMG} className='tv-img' width={"100%"} />
+              <video autoPlay loop muted className='tv-video' width={"100%"}>
                 <source src={VIDEO_TV} type='video/mp4' />
               </video>
             </Box>

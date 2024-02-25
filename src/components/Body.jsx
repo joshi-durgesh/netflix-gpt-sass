@@ -1,6 +1,7 @@
 import ChildrenSection from "./ChildrenSection";
 import DevicesSection from "./DevicesSection";
 import FAQSection from "./FAQSection";
+import Footer from "./Footer";
 import HeroSection from "./HeroSection";
 import MobileSection from "./MobileSection";
 import TvSection from "./TvSection";
@@ -14,6 +15,7 @@ const Body = () => {
       <DevicesSection />
       <ChildrenSection />
       <FAQSection />
+      <Footer />
     </>
   );
 };
