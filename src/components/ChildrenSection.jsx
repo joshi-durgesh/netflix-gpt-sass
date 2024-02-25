@@ -1,26 +1,28 @@
+import { Box, Container, Grid, Stack, Typography } from "@mui/material";
 import { CHILDREN_IMG } from "../utils/constant";
 
 const ChildrenSection = () => {
   return (
-    <section className='bg-black  border-b-8 border-neutral-700 '>
-      <div className='max-w-[1200px] h-[80vh] mx-auto flex items-center gap-4'>
-        <div className='w-full h-full relative'>
-          <img
-            src={CHILDREN_IMG}
-            className='absolute  top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] z-10'
-          />
-        </div>
-        <div className='w-full h-full text-white flex flex-col gap-6 justify-center'>
-          <div className='text-5xl font-bold  tracking-wider leading-tight'>
-            Create profiles for kids
-          </div>
-          <p className='text-2xl'>
-            Send children on adventures with their favourite characters in a
-            space made just for them—free with your membership.
-          </p>
-        </div>
-      </div>
-    </section>
+    <Box className='section'>
+      <Container maxWidth='lg' className='container-height'>
+        <Grid container height={"100%"}>
+          <Grid xs='6' className='content-container'>
+            <img src={CHILDREN_IMG} width={"100%"} />
+          </Grid>
+          <Grid xs='6' className='content-container'>
+            <Stack color={"#fff"}>
+              <Typography className='content-heading'>
+                Create profiles for kids
+              </Typography>
+              <Typography fontSize={"2.2rem"}>
+                Send children on adventures with their favourite characters in a
+                space made just for them—free with your membership.
+              </Typography>
+            </Stack>
+          </Grid>
+        </Grid>
+      </Container>
+    </Box>
   );
 };
 

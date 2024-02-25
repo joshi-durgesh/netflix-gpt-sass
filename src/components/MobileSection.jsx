@@ -3,7 +3,7 @@ import { DOWNLOAD_GIF, MOBILE_IMG, MOVIE_POSTER } from "../utils/constant";
 
 const MobileSection = () => {
   return (
-    <Box className='section' bgcolor={"#000"}>
+    <Box className='section'>
       <Container maxWidth='lg' className='container-height'>
         <Grid container height={"100%"}>
           <Grid xs='6' className='content-container'>
