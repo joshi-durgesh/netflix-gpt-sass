@@ -13,7 +13,7 @@ const Body = () => {
       <MobileSection />
       <DevicesSection />
       <ChildrenSection />
-      {/*<FAQSection /> */}
+      <FAQSection />
     </>
   );
 };

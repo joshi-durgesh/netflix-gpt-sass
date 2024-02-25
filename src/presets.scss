@@ -41,3 +41,8 @@ $dark-grad: linear-gradient(
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin section-color() {
+  border-bottom: $border-lg;
+  background-color: #000;
+}

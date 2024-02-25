@@ -50,8 +50,12 @@ html {
 
 .section {
   height: 80vh;
-  border-bottom: $border-lg;
-  background-color: #000;
+  @include section-color();
+}
+
+.faq-section {
+  @include section-color();
+  padding: 4rem 0;
 }
 
 .tv-img {
@@ -112,4 +116,41 @@ html {
   line-height: 6.5rem;
   margin-bottom: 2rem;
   word-spacing: -6px;
+}
+
+.que {
+  font-size: 2.4rem;
+  color: #fff;
+}
+
+.css-o4b71y-MuiAccordionSummary-content.Mui-expanded {
+  margin: 0;
+}
+
+.css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root.Mui-expanded {
+  padding: 2rem 2rem;
+}
+
+.que-div {
+  background: #323232;
+  padding: 1rem 2rem;
+  &:hover {
+    background-color: #3a3a3a;
+  }
+}
+
+.accordion-div {
+  background-color: #000;
+  margin-bottom: 1rem;
+}
+
+.ans-div {
+  background-color: #323232;
+  margin-top: 1px;
+  padding: 2rem 2rem;
+}
+
+.ans {
+  color: #fff;
+  font-size: 2.4rem;
 }
