@@ -20,7 +20,7 @@ const Footer = () => {
           <Link className='links'>000-800-919-1694</Link>
         </Stack>
         <Grid container>
-          <Grid xs='3'>
+          <Grid xs='6' md='3'>
             <List>
               <ListItem>
                 <Link className='links'>FAQ</Link>
@@ -36,7 +36,7 @@ const Footer = () => {
               </ListItem>
             </List>
           </Grid>
-          <Grid xs='3'>
+          <Grid xs='6' md='3'>
             <List>
               <ListItem>
                 <Link className='links'>Help Center</Link>
@@ -52,7 +52,7 @@ const Footer = () => {
               </ListItem>
             </List>
           </Grid>
-          <Grid xs='3'>
+          <Grid xs='6' md='3'>
             <List>
               <ListItem>
                 <Link className='links'>Account</Link>
@@ -68,7 +68,7 @@ const Footer = () => {
               </ListItem>
             </List>
           </Grid>
-          <Grid xs='3'>
+          <Grid xs='6' md='3'>
             <List>
               <ListItem>
                 <Link className='links'>Media Center</Link>

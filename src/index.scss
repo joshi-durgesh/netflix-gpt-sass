@@ -12,7 +12,6 @@ html {
 }
 
 .logo {
-  width: 19rem;
   filter: saturate(2);
 }
 
@@ -21,7 +20,7 @@ html {
 }
 
 .btn-lg {
-  @include btn($size: 2rem);
+  @include btn();
   padding: 0.5rem 3rem;
 }
 
@@ -30,7 +29,6 @@ html {
     image: url($hero_img);
     position: bottom -15rem right -20rem;
   }
-  height: 98vh;
   border-bottom: $border-lg;
 }
 
@@ -43,13 +41,8 @@ html {
   text-align: center;
 }
 
-.hero-content {
-  color: $text-light;
-  margin-top: 25rem;
-}
-
 .section {
-  height: 80vh;
+  // height: 80vh;
   @include section-color();
 }
 
@@ -58,70 +51,54 @@ html {
   padding: 4rem 0;
 }
 
-.tv-img {
-  @include item-center();
-  z-index: 2;
-}
-
-.center-container {
-  @include item-center();
+.tv-img,
+.device-img {
+  width: 100%;
+  position: relative;
 }
 
 .tv-video {
-  @include item-center();
-  margin-top: -7px;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.74);
   margin-left: -2px;
-  transform: translate(-50%, -50%) scale(0.73);
+  margin-top: -8px;
 }
 
-.device-img {
-  @include item-center();
-  z-index: 2;
+.figure {
+  position: relative;
 }
 
 .device-video {
-  @include item-center();
-
-  transform: translate(-51%, -76%) scale(0.59);
-}
-
-.container-height {
-  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -70%) scale(0.64);
 }
 
 .mobile-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   background-color: $bg-black;
-  height: 10rem;
+  height: 22%;
   width: 60%;
   border: $border-md;
   border-radius: 7px;
   position: absolute;
-  bottom: 20%;
+  bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.content-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
-  width: 100%;
-}
-
 .content-heading {
-  font-size: 4.6rem;
   font-weight: 900;
-  line-height: 6.5rem;
+  // line-height: 6.5rem;
   margin-bottom: 2rem;
-  word-spacing: -6px;
+  // word-spacing: -6px;
 }
 
 .que {
-  font-size: 2.4rem;
   color: $text-light;
 }
 
@@ -154,7 +131,6 @@ html {
 
 .ans {
   color: $text-light;
-  font-size: 2.4rem;
 }
 
 .links {

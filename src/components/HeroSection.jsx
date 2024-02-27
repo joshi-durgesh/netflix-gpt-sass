@@ -2,47 +2,56 @@ import Header from "./Header";
 import Button from "@mui/material/Button";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { Box, Container, Stack, Typography } from "@mui/material";
-import {
-  createTheme,
-  responsiveFontSizes,
-  ThemeProvider,
-} from "@mui/material/styles";
-
-let theme = createTheme();
-theme = responsiveFontSizes(theme);
 
 const HeroSection = () => {
   return (
-    <Box className='hero-section'>
+    <section className='hero-section'>
       <Stack className='hero-container'>
         <Header />
-        <Container maxWidth='lg' className='hero-content'>
-          <ThemeProvider theme={theme}>
+        <Container maxWidth='lg'>
+          <Box color={"#fff"} py={{ xs: "8rem", sm: "13rem", md: "15rem" }}>
             <Typography
-              fontSize={"4.8rem"}
-              fontWeight='900'
+              fontWeight='800'
+              fontSize={{ xs: "2rem", sm: "3rem", md: "4.8rem" }}
               mb={"2rem"}
               letterSpacing={"0"}
               sx={{ wordSpacing: "-.4rem" }}
             >
               Laughter. Tears. Thrills. Find it all on Netflix.
             </Typography>
-            <Typography variant='h3' mb={"1rem"}>
+            <Typography
+              fontSize={{ xs: "1.4rem", sm: "2rem", md: "3rem" }}
+              mb={"1rem"}
+            >
               Endless entertainment starts at just ₹149. Cancel anytime.
             </Typography>
-            <Typography variant='h3'>
+            <Typography fontSize={{ xs: "1.4rem", sm: "2rem", md: "3rem" }}>
               Ready to watch? Enter your email to create or restart your
               membership.
             </Typography>
-          </ThemeProvider>
-          <Box pt={"3rem"}>
-            <Button endIcon={<ArrowForwardIosIcon />} className='btn-lg'>
-              Get Started
-            </Button>
+            <Box pt={"3rem"}>
+              <Button
+                endIcon={
+                  <ArrowForwardIosIcon
+                    sx={{
+                      fontSize: {
+                        xs: "1.2rem !important",
+                        sm: "1.4rem !important",
+                        md: "2.4rem !important",
+                      },
+                    }}
+                  />
+                }
+                className='btn-lg'
+                sx={{ fontSize: { xs: "1rem", sm: "1.4rem", md: "2.2rem" } }}
+              >
+                Get Started
+              </Button>
+            </Box>
           </Box>
         </Container>
       </Stack>
-    </Box>
+    </section>
   );
 };
 

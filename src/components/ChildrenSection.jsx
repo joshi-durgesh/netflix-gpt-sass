@@ -3,18 +3,33 @@ import { CHILDREN_IMG } from "../utils/constant";
 
 const ChildrenSection = () => {
   return (
-    <Box className='section'>
-      <Container maxWidth='lg' className='container-height'>
-        <Grid container height={"100%"}>
-          <Grid xs='6' className='content-container'>
-            <img src={CHILDREN_IMG} width={"100%"} />
+    <section className='section'>
+      <Container maxWidth='lg'>
+        <Grid
+          container
+          alignItems={"center"}
+          justifyContent={"center"}
+          py={{ md: 10, xs: 7 }}
+          gap={{ xs: 3, md: 0 }}
+        >
+          <Grid xs={12} md={6}>
+            <figure className='figure'>
+              <img src={CHILDREN_IMG} width={"100%"} />
+            </figure>
           </Grid>
-          <Grid xs='6' className='content-container'>
+          <Grid xs={12} md={6}>
             <Stack color={"#fff"}>
-              <Typography className='content-heading'>
+              <Typography
+                className='content-heading'
+                fontSize={{ xs: "2rem", sm: "3rem", md: "4.6rem" }}
+                textAlign={{ xs: "center", md: "left" }}
+              >
                 Create profiles for kids
               </Typography>
-              <Typography fontSize={"2.2rem"}>
+              <Typography
+                fontSize={{ xs: "1.4rem", sm: "1.8rem", md: "2.2rem" }}
+                textAlign={{ xs: "center", md: "left" }}
+              >
                 Send children on adventures with their favourite characters in a
                 space made just for them—free with your membership.
               </Typography>
@@ -22,7 +37,7 @@ const ChildrenSection = () => {
           </Grid>
         </Grid>
       </Container>
-    </Box>
+    </section>
   );
 };
 

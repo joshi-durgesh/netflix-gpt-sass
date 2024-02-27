@@ -26,9 +26,8 @@ $dark-grad: linear-gradient(
 
 //mixins
 
-@mixin btn($size: 1.4rem) {
+@mixin btn() {
   font: {
-    size: $size;
     weight: bold;
   }
   color: #fff;
