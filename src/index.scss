@@ -24,15 +24,18 @@ html {
   padding: 0.5rem 3rem;
 }
 
-.hero-section {
+.border-sec {
+  border-bottom: $border-lg;
+}
+
+.section-img {
   background: {
     image: url($hero_img);
     position: bottom -15rem right -20rem;
   }
-  border-bottom: $border-lg;
 }
 
-.hero-container {
+.container-dark {
   background: {
     image: $dark-grad;
   }
@@ -139,4 +142,22 @@ html {
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
   text-decoration: underline;
+}
+
+.form-field {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 6rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.btn-type2 {
+  font-size: 1.4rem;
+  color: #fff;
+  text-transform: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

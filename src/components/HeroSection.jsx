@@ -5,8 +5,8 @@ import { Box, Container, Stack, Typography } from "@mui/material";
 
 const HeroSection = () => {
   return (
-    <section className='hero-section'>
-      <Stack className='hero-container'>
+    <section className='section-img border-sec'>
+      <Stack className='container-dark'>
         <Header />
         <Container maxWidth='lg'>
           <Box color={"#fff"} py={{ xs: "8rem", sm: "13rem", md: "15rem" }}>
