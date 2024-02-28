@@ -10,6 +10,13 @@ import {
   Typography,
   styled,
 } from "@mui/material";
+import { useRef, useState } from "react";
+import { checkValidData } from "../utils/validate";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "../utils/firebase";
 
 const CustomTextField = styled(TextField)({
   "& .MuiOutlinedInput-notchedOutline": {
@@ -31,9 +38,63 @@ const CustomTextField = styled(TextField)({
 });
 
 const SignInPage = () => {
+  const [isSignIn, setIsSignIn] = useState(true);
+  const [showErrorMessage, setShowErrorMessage] = useState(null);
+  const email = useRef(null);
+  const password = useRef(null);
+
+  const handleButtonClick = () => {
+    const message = checkValidData(
+      email?.current?.value?.trim().toLowerCase(),
+      password?.current?.value?.trim()
+    );
+    setShowErrorMessage(message);
+    if (message) return;
+
+    //Sign in and sign up logic
+    if (!isSignIn) {
+      //  sign up logic
+      createUserWithEmailAndPassword(
+        auth,
+        email?.current?.value?.trim().toLowerCase(),
+        password?.current?.value?.trim()
+      )
+        .then((userCredential) => {
+          // Signed up
+          const user = userCredential.user;
+          console.log(user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setShowErrorMessage(errorCode + "-" + errorMessage);
+        });
+    } else {
+      //sign in logic
+      signInWithEmailAndPassword(
+        auth,
+        email?.current?.value?.trim().toLowerCase(),
+        password?.current?.value?.trim()
+      )
+        .then((userCredential) => {
+          const user = userCredential.user;
+          console.log(user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setShowErrorMessage(errorCode + "-" + errorMessage);
+        });
+    }
+  };
+
+  const toggleSignIn = () => {
+    setIsSignIn(!isSignIn);
+  };
+
   return (
     <section className='section-img'>
-      <Box className='container-dark '>
+      <Box className='container-dark ' height={"100vh"}>
         <Container maxWidth='lg'>
           <Link to={"/"} className='p-4 block'>
             <Box width={{ xs: "12rem", sm: "18rem", md: "20rem" }}>
@@ -50,17 +111,19 @@ const SignInPage = () => {
                   fontWeight={"bold"}
                   textAlign={"left"}
                 >
-                  Sign in
+                  {isSignIn ? "Sign in" : "Sign up"}
                 </Typography>
+                {!isSignIn && (
+                  <CustomTextField
+                    variant='outlined'
+                    label='Name'
+                    type='text'
+                    fullWidth
+                    autoComplete='off'
+                  />
+                )}
                 <CustomTextField
-                  variant='outlined'
-                  label='Name'
-                  type='text'
-                  fullWidth
-                  autoComplete='off'
-                  sx={{ display: "none" }}
-                />
-                <CustomTextField
+                  inputRef={email}
                   variant='outlined'
                   label='Email'
                   type='email'
@@ -68,27 +131,37 @@ const SignInPage = () => {
                   autoComplete='off'
                 />
                 <CustomTextField
+                  inputRef={password}
                   variant='outlined'
                   label='Password'
                   type='password'
                   fullWidth
                   autoComplete='off'
                 />
+                <Typography
+                  color={"red"}
+                  textAlign={"left"}
+                  fontSize={"1.3rem"}
+                >
+                  {showErrorMessage}
+                </Typography>
                 <Button
+                  onClick={handleButtonClick}
                   variant='contained'
                   className='btn-lg'
                   sx={{
                     fontSize: { xs: "1rem", md: "1.6rem" },
-                    marginTop: "3rem",
                   }}
                 >
-                  Sign in
+                  {isSignIn ? "Sign in" : "Sign up"}
                 </Button>
                 <Stack direction={"row"} alignItems={"center"}>
                   <Typography fontSize={"1.4rem"} color={"#fff"}>
-                    New to Netflix?
+                    {isSignIn ? "New to Netflix?" : "Already an account?"}
                   </Typography>
-                  <Button className='btn-type2'>Sign up now.</Button>
+                  <Button className='btn-type2' onClick={toggleSignIn}>
+                    {isSignIn ? "Sign up now." : "Sign in now."}
+                  </Button>
                 </Stack>
               </form>
             </Grid>
