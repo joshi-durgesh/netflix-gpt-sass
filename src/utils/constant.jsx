@@ -27,3 +27,14 @@ export const VIDEO_TV =
 
 export const VIDEO_DEVICES =
   "https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/video-devices-in.m4v";
+
+export const API_OPTIONS = {
+  method: "GET",
+  headers: {
+    accept: "application/json",
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjNjJhM2JhYzg4ZGVkN2QzYzIwYjAxMDU4ZWU1NmZlMSIsInN1YiI6IjY1ZTA1MDRjYTgwNjczMDE4NGE4ZmI4MCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.9PRizBcmlCk3yKNvCofYV0ecKCBsL1X7cWOSEkjJUZA",
+  },
+};
+
+export const API_URL = "https://api.themoviedb.org/3/movie/now_playing?page=1";
