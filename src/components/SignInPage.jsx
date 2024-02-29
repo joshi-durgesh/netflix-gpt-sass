@@ -1,50 +1,31 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { LOGO } from "../utils/constant";
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  Stack,
-  TextField,
-  Typography,
-  styled,
-} from "@mui/material";
+import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
 import { useRef, useState } from "react";
 import { checkValidData } from "../utils/validate";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-
-const CustomTextField = styled(TextField)({
-  "& .MuiOutlinedInput-notchedOutline": {
-    border: "2px solid grey",
-  },
-  "& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline": {
-    borderColor: "grey",
-  },
-
-  "& .MuiInputLabel-root": {
-    color: "#fff",
-  },
-
-  "& .MuiInputBase-input": {
-    color: "#fff",
-    fontSize: "1.2rem",
-    fontWeight: "bold",
-  },
-});
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
+import CustomTextField from "./CustomTextField";
 
 const SignInPage = () => {
   const [isSignIn, setIsSignIn] = useState(true);
   const [showErrorMessage, setShowErrorMessage] = useState(null);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const email = useRef(null);
   const password = useRef(null);
+  const name = useRef(null);
 
   const handleButtonClick = () => {
     const message = checkValidData(
+      name?.current?.value?.trim(),
       email?.current?.value?.trim().toLowerCase(),
       password?.current?.value?.trim()
     );
@@ -62,7 +43,19 @@ const SignInPage = () => {
         .then((userCredential) => {
           // Signed up
           const user = userCredential.user;
-          console.log(user);
+          updateProfile(user, {
+            displayName: name.current.value.trim(),
+          })
+            .then(() => {
+              const { uid, email, displayName } = auth.currentUser;
+              dispatch(
+                addUser({ uid: uid, email: email, displayName: displayName })
+              );
+              navigate("/browse");
+            })
+            .catch((error) => {
+              setShowErrorMessage(error.message);
+            });
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -78,7 +71,7 @@ const SignInPage = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log(user);
+          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -120,6 +113,7 @@ const SignInPage = () => {
                     type='text'
                     fullWidth
                     autoComplete='off'
+                    inputRef={name}
                   />
                 )}
                 <CustomTextField
