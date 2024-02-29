@@ -49,9 +49,7 @@ const BrowseHeader = () => {
     handleCloseUserMenu();
     if (setting === "Logout") {
       signOut(auth)
-        .then(() => {
-          navigate("/");
-        })
+        .then(() => {})
         .catch((error) => {
           navigate("/error");
         });

@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { LOGO } from "../utils/constant";
 import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
 import { useRef, useState } from "react";
@@ -12,11 +12,11 @@ import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import CustomTextField from "./CustomTextField";
+import Footer from "./Footer";
 
 const SignInPage = () => {
   const [isSignIn, setIsSignIn] = useState(true);
   const [showErrorMessage, setShowErrorMessage] = useState(null);
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const email = useRef(null);
@@ -51,7 +51,6 @@ const SignInPage = () => {
               dispatch(
                 addUser({ uid: uid, email: email, displayName: displayName })
               );
-              navigate("/browse");
             })
             .catch((error) => {
               setShowErrorMessage(error.message);
@@ -71,7 +70,6 @@ const SignInPage = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -86,8 +84,8 @@ const SignInPage = () => {
   };
 
   return (
-    <section className='section-img'>
-      <Box className='container-dark ' height={"100vh"}>
+    <section className='signin-section-img'>
+      <Box className='container-light-dark ' height={"100vh"}>
         <Container maxWidth='lg'>
           <Link to={"/"} className='p-4 block'>
             <Box width={{ xs: "12rem", sm: "18rem", md: "20rem" }}>
@@ -161,6 +159,7 @@ const SignInPage = () => {
             </Grid>
           </Container>
         </Container>
+        <Footer />
       </Box>
     </section>
   );

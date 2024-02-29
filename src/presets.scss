@@ -24,6 +24,12 @@ $dark-grad: linear-gradient(
   rgba(0, 0, 0, 0.7)
 );
 
+$light-dark-grad: linear-gradient(
+  rgba(0, 0, 0, 0.5),
+  rgba(0, 0, 0, 0.4),
+  rgba(0, 0, 0, 0.5)
+);
+
 //mixins
 
 @mixin btn() {
