@@ -7,11 +7,11 @@ const MainContainer = () => {
   const movies = useSelector((store) => store.movies?.nowPlayingMovies);
   if (movies === null) return;
 
-  const mainMovie = movies[16];
+  const mainMovie = movies[19];
   const { original_title, overview, id } = mainMovie;
 
   return (
-    <Box width={"100%"} position={"relative"} top={"-10rem"}>
+    <Box width={"100%"} position={"relative"} top={"-10rem"} mt={"-8rem"}>
       <Box
         sx={{ aspectRatio: "16/9", width: "100%" }}
         className='video-background'
