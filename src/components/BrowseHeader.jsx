@@ -57,7 +57,7 @@ const BrowseHeader = () => {
   };
 
   return (
-    <AppBar position='static' className='browser-header'>
+    <AppBar className='browser-header'>
       <Container maxWidth='xl'>
         <Toolbar>
           <Box width={"16rem"}>

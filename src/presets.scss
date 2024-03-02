@@ -30,8 +30,12 @@ $light-dark-grad: linear-gradient(
   rgba(0, 0, 0, 0.5)
 );
 
+$partial-dark-grad: linear-gradient(
+  to left,
+  rgba(0, 0, 0, 0),
+  rgba(0, 0, 0, 0.8) 90%
+);
 //mixins
-
 @mixin btn() {
   font: {
     weight: bold;

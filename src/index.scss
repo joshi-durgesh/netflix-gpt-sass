@@ -178,9 +178,52 @@ html {
 }
 
 .browser-header {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 10;
+  box-shadow: none;
+  position: sticky;
+  top: 0;
+  left: 0;
 }
 
 .user-icon {
   border-radius: 4px;
+}
+
+.browse-section {
+  position: relative;
+}
+
+.iframe-video {
+  border: none;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
+.btn-play {
+  background-color: #fff;
+  color: #000;
+  font-weight: 900;
+  text-transform: none;
+  &:hover {
+    background-color: #fff;
+    opacity: 0.5;
+  }
+}
+
+.btn-info {
+  text-transform: none;
+  background-color: #595959;
+  color: #fff;
+  font-weight: bold;
+  &:hover {
+    background-color: #595959;
+    opacity: 0.8;
+  }
+}
+
+.video-background {
+  background: {
+    image: $partial-dark-grad;
+  }
 }
