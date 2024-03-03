@@ -6,18 +6,27 @@ const VideoTitle = ({ title, overview }) => {
   return (
     <Box
       position={"absolute"}
-      top={"50%"}
+      top={{ sm: "65%", md: "50%" }}
       left={"4rem"}
       width={"32rem"}
-      sx={{ transform: "translateY(-50%)" }}
+      sx={{
+        transform: "translateY(-50%)",
+        display: { xs: "none", sm: "block", md: "block" },
+      }}
     >
-      <Typography variant='h4' mb={"2rem"} fontWeight={"bold"} color={"#fff"}>
+      <Typography
+        fontSize={{ sm: "1.6rem" }}
+        mb={"2rem"}
+        fontWeight={"bold"}
+        color={"#ddd"}
+      >
         {title}
       </Typography>
       <Typography
         mb={"2rem"}
         varient='paragraph'
-        color={"#fff"}
+        color={"#aaa"}
+        display={{ sm: "none", md: "block" }}
         fontSize={"1.3rem"}
       >
         {overview}

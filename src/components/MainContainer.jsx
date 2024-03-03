@@ -4,14 +4,18 @@ import VideoBackground from "./VideoBackground";
 import { Box } from "@mui/material";
 
 const MainContainer = () => {
-  const movies = useSelector((store) => store.movies?.nowPlayingMovies);
+  const movies = useSelector((store) => store.movies?.animatedMovies);
   if (movies === null) return;
 
-  const mainMovie = movies[19];
+  const mainMovie = movies[7];
   const { original_title, overview, id } = mainMovie;
 
   return (
-    <Box width={"100%"} position={"relative"} top={"-10rem"} mt={"-8rem"}>
+    <Box
+      width={"100%"}
+      position={"relative"}
+      top={{ xs: "-4rem", sm: "-6.5rem", md: "-8rem", lg: "-10rem" }}
+    >
       <Box
         sx={{ aspectRatio: "16/9", width: "100%" }}
         className='video-background'

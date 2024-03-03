@@ -231,7 +231,11 @@ html {
 .all-movies {
   position: relative;
   background: {
-    image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.511), black 20%);
+    image: linear-gradient(
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.4) 20px,
+      black 30px
+    );
   }
   display: flex;
   flex-direction: column;
@@ -254,7 +258,7 @@ html {
   scroll-behavior: smooth;
   scrollbar-width: none;
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .carousel-btn {

@@ -14,12 +14,10 @@ import {
   MenuItem,
 } from "@mui/material";
 
-import { MenuIcon } from "@mui/icons-material";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
 
 const pages = ["Home", "Tv Shows", "Movies", "Latest", "My List"];
 const settings = ["Profile", "Account", "Logout"];
@@ -59,65 +57,11 @@ const BrowseHeader = () => {
   return (
     <AppBar className='browser-header'>
       <Container maxWidth='xl'>
-        <Toolbar>
-          <Box width={"16rem"}>
+        <Toolbar sx={{ minHeight: "20px", justifyContent: "space-between" }}>
+          <Box width={{ xs: "8rem", sm: "12rem", md: "16rem" }}>
             <img src={LOGO} width={"100%"} />
           </Box>
-          {/* <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size='large'
-              aria-label='account of current user'
-              aria-controls='menu-appbar'
-              aria-haspopup='true'
-              onClick={handleOpenNavMenu}
-              color='inherit'
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id='menu-appbar'
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign='center'>{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Typography
-            variant='h5'
-            noWrap
-            component='a'
-            href='#app-bar-with-responsive-menu'
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            LOGO
-          </Typography> */}
+
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
@@ -144,6 +88,10 @@ const BrowseHeader = () => {
                 sx={{ p: 0 }}
               >
                 <Avatar
+                  sx={{
+                    width: { xs: "3rem", lg: "4rem" },
+                    height: { xs: "3rem", lg: "4rem" },
+                  }}
                   className='user-icon'
                   src={require("../images/user-icon.png")}
                 />

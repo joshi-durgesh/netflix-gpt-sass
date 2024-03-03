@@ -14,8 +14,13 @@ const MovieList = ({ title, movies, id }) => {
   };
 
   return (
-    <Box pl={"3rem"}>
-      <Typography variant='h4' fontWeight={"bold"} mb={2} color={"#fff"}>
+    <Box pl={{ xs: "1.2rem", md: "3rem" }} mb={{ xs: 0, lg: 2 }}>
+      <Typography
+        fontSize={{ xs: "1.2rem", sm: "1.6rem", md: "2rem", lg: "2.2rem" }}
+        fontWeight={"bold"}
+        mb={{ xs: 1, sm: 1.2, md: 1.6, lg: 3 }}
+        color={"#fff"}
+      >
         {title}
       </Typography>
       <Stack direction={"row"} className='carousel'>
