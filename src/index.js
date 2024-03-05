@@ -11,6 +11,8 @@ import SignInPage from "./components/SignInPage";
 import Body from "./components/Body";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
+import BrowseContent from "./components/BrowseContent";
+import SearchPage from "./components/SearchPage";
 
 const appRouter = createBrowserRouter([
   {
@@ -28,6 +30,16 @@ const appRouter = createBrowserRouter([
       {
         path: "/browse",
         element: <Browse />,
+        children: [
+          {
+            path: "/browse",
+            element: <BrowseContent />,
+          },
+          {
+            path: "/browse/search",
+            element: <SearchPage />,
+          },
+        ],
       },
     ],
   },

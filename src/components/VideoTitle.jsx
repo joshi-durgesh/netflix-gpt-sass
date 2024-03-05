@@ -15,7 +15,7 @@ const VideoTitle = ({ title, overview }) => {
       }}
     >
       <Typography
-        fontSize={{ sm: "1.6rem" }}
+        fontSize={{ sm: "1.6rem", md: "3rem" }}
         mb={"2rem"}
         fontWeight={"bold"}
         color={"#ddd"}

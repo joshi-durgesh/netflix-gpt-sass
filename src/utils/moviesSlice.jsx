@@ -10,9 +10,13 @@ const moviesSlice = createSlice({
     tvShows: null,
     hindiMovies: null,
     trailerVideo: null,
+    videoNumber: 0,
     animatedMovies: null,
   },
   reducers: {
+    changeVideoNumber: (state, action) => {
+      state.videoNumber = action.payload;
+    },
     addHindiMovies: (state, action) => {
       state.hindiMovies = action.payload;
     },
@@ -41,6 +45,7 @@ const moviesSlice = createSlice({
 });
 
 export const {
+  changeVideoNumber,
   addAnimatedMovies,
   addHindiMovies,
   addNowPlayingMovies,

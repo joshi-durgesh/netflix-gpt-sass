@@ -5,9 +5,11 @@ import { Box } from "@mui/material";
 
 const MainContainer = () => {
   const movies = useSelector((store) => store.movies?.animatedMovies);
+  const movieNumber = useSelector((store) => store.movies?.videoNumber);
+
   if (movies === null) return;
 
-  const mainMovie = movies[7];
+  const mainMovie = movies[movieNumber];
   const { original_title, overview, id } = mainMovie;
 
   return (

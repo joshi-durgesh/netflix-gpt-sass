@@ -19,12 +19,13 @@ import { signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 
-const pages = ["Home", "Tv Shows", "Movies", "Latest", "My List"];
+const pages = ["Home", "Tv Shows", "Movies", "Latest", "Search"];
 const settings = ["Profile", "Account", "Logout"];
 
 const BrowseHeader = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
+  const navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -37,11 +38,32 @@ const BrowseHeader = () => {
     setAnchorElNav(null);
   };
 
+  const handleNavigation = (page) => {
+    const title = page.target.textContent;
+    switch (title) {
+      case "Search":
+        navigate("/browse/search");
+        console.log("search");
+        break;
+      case "Home":
+        navigate("/browse");
+        console.log("Home");
+        break;
+      case "Movies":
+        console.log("Movies");
+        break;
+      case "Latest":
+        console.log("Latest");
+        break;
+      case "Tv Shows":
+        console.log("Tv Shows");
+        break;
+    }
+  };
+
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-
-  const navigate = useNavigate();
 
   const handleMenuItemClick = (setting) => {
     handleCloseUserMenu();
@@ -66,7 +88,7 @@ const BrowseHeader = () => {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
+                onClick={handleNavigation}
                 sx={{
                   my: 2,
                   color: "white",
