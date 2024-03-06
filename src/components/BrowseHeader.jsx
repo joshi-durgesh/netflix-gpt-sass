@@ -35,20 +35,14 @@ const BrowseHeader = () => {
     switch (title) {
       case "Search":
         navigate("/browse/search");
-        console.log("search");
         break;
       case "Home":
         navigate("/browse");
-        console.log("Home");
         break;
       case "Movies":
-        console.log("Movies");
         break;
-      case "Latest":
-        console.log("Latest");
-        break;
+
       case "Tv Shows":
-        console.log("Tv Shows");
         break;
     }
   };

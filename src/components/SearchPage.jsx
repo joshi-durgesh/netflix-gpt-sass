@@ -23,8 +23,6 @@ const SearchPage = () => {
   };
 
   const handleGptSearchClick = async () => {
-    console.log(searchText.current.value);
-
     const gptQuerry =
       "Act as a Movie Recommendation system and suggest some movies for the querry:" +
       searchText.current.value +
