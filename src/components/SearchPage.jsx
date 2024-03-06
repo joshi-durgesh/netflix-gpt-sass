@@ -52,16 +52,17 @@ const SearchPage = () => {
     <section>
       <Box bgcolor={"#000"} py={9} height={"100vh"} mt={"-7rem"}>
         <Container maxWidth='md'>
-          <Grid container alignItems={"center"} mt={7}>
-            <Grid item xs={10}>
+          <Grid container alignItems={"stretch"} mt={7} px={"3rem"}>
+            <Grid item xs={9}>
               <CustomTextField
                 inputRef={searchText}
                 placeholder='What would you like to watch today?'
                 fullWidth
               />
             </Grid>
-            <Grid item xs={2}>
+            <Grid item xs={3}>
               <Button
+                sx={{ fontSize: { xs: "1.2rem", md: "1.4rem" } }}
                 variant='contained'
                 className='btn-search'
                 onClick={handleGptSearchClick}
