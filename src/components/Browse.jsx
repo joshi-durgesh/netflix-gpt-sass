@@ -7,6 +7,7 @@ import useTopRatedMovies from "../hooks/useTopRatedMovies";
 import useTvShows from "../hooks/useTvShows";
 import useUpcomingMovies from "../hooks/useUpcomingMovies";
 import BrowseHeader from "./BrowseHeader";
+import BottomNavigate from "./BottomNavigate";
 
 const Browse = () => {
   useNowPlayingMovies();
@@ -20,6 +21,7 @@ const Browse = () => {
   return (
     <section className='browse-section'>
       <BrowseHeader />
+      <BottomNavigate />
       <Outlet />
     </section>
   );

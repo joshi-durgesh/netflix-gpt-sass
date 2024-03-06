@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 import { IMG_CDN_URL } from "../utils/constant";
 
 const MovieCard = ({ posterPath }) => {
+  if (!posterPath) return null;
   return (
     <Box
       width={{ xs: "60px", sm: "80px", md: "100px", lg: "120px" }}

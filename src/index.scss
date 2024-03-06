@@ -267,3 +267,19 @@ html {
   position: absolute;
   display: none;
 }
+
+.btn-search {
+  text-transform: none;
+  font-size: 1.4rem;
+  background: #ac0000;
+  font-weight: bold;
+  padding: 1.3rem 3rem;
+}
+
+.bottom-navigation {
+  position: fixed;
+  z-index: 10;
+  // top: 92%;
+  bottom: 0;
+  margin-top: -5.4rem;
+}

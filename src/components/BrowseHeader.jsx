@@ -19,23 +19,15 @@ import { signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 
-const pages = ["Home", "Tv Shows", "Movies", "Latest", "Search"];
+const pages = ["Home", "Movies", "Tv Shows", "Search"];
 const settings = ["Profile", "Account", "Logout"];
 
 const BrowseHeader = () => {
-  const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
   const navigate = useNavigate();
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
   };
 
   const handleNavigation = (page) => {
