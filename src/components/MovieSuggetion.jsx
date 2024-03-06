@@ -7,7 +7,7 @@ const MovieSuggetion = () => {
   if (!movieNames) return null;
 
   return (
-    <Box color={"#fff"} py={4} bgcolor={"#000"}>
+    <Box color={"#fff"} py={4} pb={"8rem"} bgcolor={"#000"}>
       <Container maxWidth='md'>
         <Box>
           {movieNames.map((movie, index) => {
