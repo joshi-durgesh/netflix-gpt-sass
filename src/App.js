@@ -17,7 +17,7 @@ function App() {
         navigate("/browse");
       } else {
         dispatch(removeUser());
-        navigate("/sign-in");
+        navigate("/");
       }
     });
 
