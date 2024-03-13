@@ -1,5 +1,6 @@
 {
   "name": "netflix",
+  "homepage": "https://joshi-durgesh.github.io/netflix-gpt-sass",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,6 +12,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "firebase": "^10.8.1",
+    "gh-pages": "^6.1.1",
     "openai": "^4.28.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -23,6 +25,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
