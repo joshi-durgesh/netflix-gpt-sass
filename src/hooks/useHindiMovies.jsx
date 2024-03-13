@@ -1,10 +1,12 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { API_OPTIONS } from "../utils/constant";
 import { addHindiMovies } from "../utils/moviesSlice";
 import { useEffect } from "react";
 
 const useHindiMovies = () => {
   const dispatch = useDispatch();
+
+  const hindiMovies = useSelector((store) => store.movies.hindiMovies);
 
   const getHindiMovies = async () => {
     const data = await fetch(
@@ -16,7 +18,7 @@ const useHindiMovies = () => {
   };
 
   useEffect(() => {
-    getHindiMovies();
+    !hindiMovies && getHindiMovies();
   }, []);
 };
 
