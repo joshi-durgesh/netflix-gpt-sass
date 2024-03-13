@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.scss";
 import reportWebVitals from "./reportWebVitals";
 import { StyledEngineProvider } from "@mui/material";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 //importing pages
 import App from "./App";
 import Browse from "./components/Browse";
@@ -14,7 +14,7 @@ import appStore from "./utils/appStore";
 import BrowseContent from "./components/BrowseContent";
 import SearchPage from "./components/SearchPage";
 
-const appRouter = createBrowserRouter([
+const appRouter = createHashRouter([
   {
     path: "/",
     element: <App />,
